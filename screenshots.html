@@ -4,20 +4,63 @@
   <meta charset="UTF-8" />
   <title>Project 1 – Screenshot Gallery</title>
   <style>
-    body { font-family: Arial, sans-serif; background-color: #fffbe6; padding: 2rem; }
-    h1 { color: #d35400; }
-    img { max-width: 100%; margin-bottom: 1rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    a { color: #007acc; display: inline-block; margin-top: 2rem; text-decoration: none; font-weight: bold; }
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      margin: 0;
+      background: linear-gradient(90deg, rgba(42, 155, 132, 1) 0%, rgba(87, 108, 199, 1) 51%, rgba(83, 237, 206, 1) 100%);
+      color: #fff;
+    }
+
+    h1 {
+      color: #ffe066;
+      margin-bottom: 1rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      transition: transform 0.2s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.02);
+    }
+
+    a.back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      border: 2px solid #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+
+    a.back-link:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+    }
   </style>
 </head>
 <body>
-  <h1>📸 Project 1 – Screenshots</h1>
+  <h1>📸 Project 1 – Screenshot Gallery</h1>
 
-  <img src="p1-break.png" alt="Break Screenshot" />
-  <img src="p1-tree.png" alt="Tree Screenshot" />
-  <img src="p1-ping.png" alt="Ping Screenshot" />
-  <img src="p1-folders.png" alt="Folders Screenshot" />
+  <div class="gallery">
+    <img src="p1-break.png" alt="Break Screenshot" />
+    <img src="p1-tree.png" alt="Tree Screenshot" />
+    <img src="p1-ping.png" alt="Ping Screenshot" />
+    <img src="p1-folders.png" alt="Folders Screenshot" />
+  </div>
 
-  <a href="index.html">← Back to Project Overview</a>
+  <a href="index.html" class="back-link">← Back to Project Overview</a>
 </body>
 </html>
