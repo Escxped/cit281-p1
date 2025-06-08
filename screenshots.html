@@ -28,6 +28,7 @@
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
       transition: transform 0.2s ease;
+      cursor: pointer;
     }
 
     .gallery img:hover {
@@ -49,17 +50,46 @@
     a.back-link:hover {
       background-color: rgba(255, 255, 255, 0.15);
     }
+
+    /* Lightbox styles */
+    .lightbox {
+      position: fixed;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    .lightbox:target {
+      display: flex;
+    }
   </style>
 </head>
 <body>
   <h1>📸 Project 1 – Screenshot Gallery</h1>
 
   <div class="gallery">
-    <img src="p1-break.png" alt="Break Screenshot" />
-    <img src="p1-tree.png" alt="Tree Screenshot" />
-    <img src="p1-ping.png" alt="Ping Screenshot" />
-    <img src="p1-folders.png" alt="Folders Screenshot" />
+    <a href="#img1"><img src="p1-break.png" alt="Break Screenshot" /></a>
+    <a href="#img2"><img src="p1-tree.png" alt="Tree Screenshot" /></a>
+    <a href="#img3"><img src="p1-ping.png" alt="Ping Screenshot" /></a>
+    <a href="#img4"><img src="p1-folders.png" alt="Folders Screenshot" /></a>
   </div>
+
+  <!-- Lightbox views -->
+  <div id="img1" class="lightbox"><a href="#"><img src="p1-break.png" alt="Break Screenshot" /></a></div>
+  <div id="img2" class="lightbox"><a href="#"><img src="p1-tree.png" alt="Tree Screenshot" /></a></div>
+  <div id="img3" class="lightbox"><a href="#"><img src="p1-ping.png" alt="Ping Screenshot" /></a></div>
+  <div id="img4" class="lightbox"><a href="#"><img src="p1-folders.png" alt="Folders Screenshot" /></a></div>
 
   <a href="index.html" class="back-link">← Back to Project Overview</a>
 </body>
